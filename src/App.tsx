@@ -1,9 +1,8 @@
+import Home from './pages/Home/Home';
 
 function App() {
   return (
-    <h1>
-      VEL:CRO
-    </h1>
+    <Home/>
   );
 }
 
