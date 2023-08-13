@@ -1,9 +1,9 @@
-import { AspectRatio, Box, Heading } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import React from 'react'
 
 export default function Map() {
   return (
-    <Box height='100vh'>
+    <Box height='calc(100vh - 5rem)'>
         <iframe
             style={{height: '100%', width: '100%'}}
             title='map'

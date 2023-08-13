@@ -1,36 +1,38 @@
-import { Card, Flex, Grid, Heading, background } from '@chakra-ui/react'
+import { Card, Flex, Grid } from '@chakra-ui/react'
 import MapIcon from '../../assets/icons/MapIcon'
 import PlusIcon from '../../assets/icons/PlusIcon'
 import EyeIcon from '../../assets/icons/EyeIcon'
 import BellIcon from '../../assets/icons/BellIcon'
 import UserIcon from '../../assets/icons/UserIcon'
 import { useNavigate } from "react-router-dom";
+import { ReactElement } from 'react'
 
 export default function Home() {
   const navigate = useNavigate();
+
+  const routes: {icon: ReactElement, path: string}[] = [
+    {icon: <MapIcon/>, path: '/map'},
+    {icon: <PlusIcon/>, path: '/map'},
+    {icon: <EyeIcon/>, path: '/events-list'},
+    {icon: <BellIcon/>, path: '/map'},
+    {icon: <UserIcon/>, path: '/map'},
+  ]
+
   return (
-    <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} height={'100vh'}>
-      <Flex>
-        <Heading color={"#0808D3"} size={'4xl'}>VEL</Heading>
-        <Heading size={'4xl'}>:</Heading>
-        <Heading color={"#0808D3"} size={'4xl'}>CRO</Heading>
-      </Flex>
-      <Grid templateColumns='repeat(2, 1fr)' gap={6} mt={10}>
-        <Card padding={'2rem'} variant={'elevated'} onClick={() => navigate('/map')}>
-          <MapIcon/>
-        </Card>
-        <Card padding={'2rem'} variant={'elevated'}>
-          <PlusIcon/>
-        </Card>
-        <Card padding={'2rem'} variant={'elevated'}>
-          <EyeIcon/>
-        </Card>
-        <Card padding={'2rem'} variant={'elevated'}>
-          <BellIcon/>
-        </Card>
-        <Card padding={'2rem'} variant={'elevated'}>
-          <UserIcon/>
-        </Card>
+    <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} mt={'4rem'}>
+      <Grid templateColumns='repeat(2, 1fr)' gap={6}>
+        {routes.map(route => {
+            return (
+                <Card 
+                padding={'2rem'} 
+                variant={'elevated'} 
+                cursor={'pointer'}
+                onClick={() => navigate(route.path)}
+                >
+                {route.icon}
+                </Card>
+            );
+        })}
       </Grid>
     </Flex>
   )
