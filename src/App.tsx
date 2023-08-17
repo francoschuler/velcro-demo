@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Map from './pages/Map/Map';
 import EventsList from './pages/EventsList/EventsList';
+import EventDetail from './pages/EventDetail/EventDetail';
+import { Box } from '@chakra-ui/react';
 
 function App() {
 
@@ -18,10 +20,16 @@ function App() {
         path: "/events-list",
         element: <EventsList />,
     },
+    {
+        path: "/events-list/:eventId",
+        element: <EventDetail />,
+    },
   ]);
 
   return (
-    <RouterProvider router={router} />
+    <Box maxW={'100%'} minH={'100vh'} padding={'2rem'}>
+      <RouterProvider router={router} />
+    </Box>
   );
 }
 
