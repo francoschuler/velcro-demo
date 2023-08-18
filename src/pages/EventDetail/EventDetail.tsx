@@ -9,6 +9,12 @@ import { useNavigate } from "react-router-dom";
 function EventDetail() {
     
     const navigate = useNavigate();
+
+    const plusIcon = <Icon boxSize={6}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                    </Icon>
    
     return (
         <>
@@ -60,9 +66,9 @@ function EventDetail() {
                     </Flex>
                     <Flex alignItems={'center'} gap={2}>
                         <Icon boxSize={6}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                        </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                            </svg>
                         </Icon>
                         <Text> Plan abierto, únete y chatea! </Text>
                     </Flex>
@@ -77,7 +83,19 @@ function EventDetail() {
                     </Button>
                 
                 </CardFooter>
-                </Card>
+            </Card>
+            <Flex alignItems={'center'} justifyContent={'center'} mt={'2rem'}>
+                <Button
+                    variant='outline'
+                    width={'fit-content'} 
+                    leftIcon={plusIcon} 
+                    backgroundColor={'white'} 
+                    color={theme.main}
+                    border={`2px solid ${theme.main}`}
+                > 
+                    Unirse al chat 
+                </Button>
+            </Flex>
         </>
        
     )

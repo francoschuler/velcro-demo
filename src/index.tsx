@@ -5,6 +5,8 @@ import './normalize.css';
 import App from './App';
 import { ChakraProvider } from '@chakra-ui/react'
 import Header from './components/header/Header';
+import Nav from './components/nav/Nav';
+import { BrowserRouter, Router } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,8 +14,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ChakraProvider>
-      <Header />
-      <App />
+        <BrowserRouter>
+            <Header />
+            <App />
+            <Nav/>
+        </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>
 );

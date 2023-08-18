@@ -8,6 +8,7 @@ const HeaderContainer = styled.header`
     align-items: center;
     justify-content: center;
     height: 6rem;
+    position: sticky;
 `;
 
 function Header() {

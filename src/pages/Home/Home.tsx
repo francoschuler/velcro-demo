@@ -12,14 +12,14 @@ export default function Home() {
 
   const routes: {icon: ReactElement, path: string}[] = [
     {icon: <MapIcon/>, path: '/map'},
-    {icon: <PlusIcon/>, path: '/map'},
+    {icon: <PlusIcon/>, path: ''},
     {icon: <EyeIcon/>, path: '/events-list'},
-    {icon: <BellIcon/>, path: '/map'},
-    {icon: <UserIcon/>, path: '/map'},
+    {icon: <BellIcon/>, path: ''},
+    {icon: <UserIcon/>, path: '/profile'},
   ]
 
   return (
-    <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} mt={'4rem'}>
+    <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} mt={'6rem'}>
       <Grid templateColumns='repeat(2, 1fr)' gap={6}>
         {routes.map(route => {
             return (
