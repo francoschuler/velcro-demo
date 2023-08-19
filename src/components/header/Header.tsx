@@ -1,6 +1,6 @@
-import { Flex, Heading } from '@chakra-ui/react'
+import { Icon } from '@chakra-ui/react'
 import styled from '@emotion/styled';
-import { theme } from '../../theme';
+import {ReactComponent as VelcroIcon} from '../../assets/newIcons/Velcro.svg';
 
 const HeaderContainer = styled.header`
     display: flex;
@@ -14,11 +14,9 @@ const HeaderContainer = styled.header`
 function Header() {
   return (
     <HeaderContainer>
-        <Flex>
-            <Heading color={theme.main} size={'3xl'}>VEL</Heading>
-            <Heading size={'3xl'}>:</Heading>
-            <Heading color={theme.main} size={'3xl'}>CRO</Heading>
-        </Flex>
+        <Icon boxSize={'20rem'}>
+            <VelcroIcon />
+        </Icon>
     </HeaderContainer>
 
   )
