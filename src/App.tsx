@@ -5,6 +5,7 @@ import EventsList from './pages/EventsList/EventsList';
 import EventDetail from './pages/EventDetail/EventDetail';
 import { Box } from '@chakra-ui/react';
 import Profile from './pages/Profile/Profile';
+import EventForm from './pages/EventForm/EventForm';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/events-list" element={<EventsList />} />
         <Route path="/events-list/:eventId" element={<EventDetail />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/create-event" element={<EventForm />} />
       </Routes>
     </Box>
   );

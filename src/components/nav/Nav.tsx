@@ -50,6 +50,22 @@ export default function Nav() {
                 </svg>
             </Icon>
 
+            <Icon
+                onClick={() => navigate('/create-event')}
+                boxSize={'3rem'} 
+                width={'3rem'}
+                height={'3rem'}
+                color={pathname === '/create-event' ? 'white' : theme.main} 
+                backgroundColor={pathname === '/create-event' ? theme.main : 'white'}
+                borderRadius={'8px'} 
+                padding={2}
+                cursor={'pointer'}
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+            </Icon>
+
             <Icon 
                 onClick={() => navigate('/events-list')}
                 boxSize={'3rem'} 
