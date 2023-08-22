@@ -1,22 +1,24 @@
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
-import StoreIcon from '../../assets/icons/StoreIcon';
-import GlobeIcon from '../../assets/icons/GlobeIcon';
-import { Card, Flex, Text } from '@chakra-ui/react'
-import LockIcon from '../../assets/icons/LockIcon';
-import UnlockIcon from '../../assets/icons/UnlockIcon';
-import UserGroupIcon from '../../assets/icons/UserGroupIcon';
+import { Card, Flex, Icon, Text } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
 import { theme } from '../../theme';
+import {ReactComponent as FoodIcon} from '../../assets/newIcons/food.svg';
+import {ReactComponent as DrinkIcon} from '../../assets/newIcons/drink.svg';
+import {ReactComponent as PetIcon} from '../../assets/newIcons/pet.svg';
+import {ReactComponent as PlaneIcon} from '../../assets/newIcons/plane.svg';
+import {ReactComponent as GroupIcon} from '../../assets/newIcons/group.svg';
+import {ReactComponent as LockIcon} from '../../assets/newIcons/lock.svg';
+import {ReactComponent as KeyIcon} from '../../assets/newIcons/key.svg';
 
 function EventsList() {
 
     const navigate = useNavigate();
 
     const categories: {icon: ReactJSXElement, name: string}[] = [
-        {icon: <StoreIcon/>, name: 'Food'},
-        {icon: <GlobeIcon />, name: 'Travel'},
-        {icon: <GlobeIcon />, name: 'Travel2'},
-        {icon: <GlobeIcon />, name: 'Travel3'},
+        {icon: <FoodIcon color={theme.main}/>, name: 'Food'},
+        {icon: <DrinkIcon color={theme.main}/>, name: 'Travel'},
+        {icon: <PetIcon color={theme.main} />, name: 'Travel2'},
+        {icon: <PlaneIcon color={theme.main}/>, name: 'Travel3'},
     ]
 
     const events = [
@@ -84,7 +86,9 @@ function EventsList() {
                             variant={'elevated'} 
                             cursor={'pointer'}
                         >
-                            {cat.icon}
+                            <Icon boxSize={'2rem'}>
+                                {cat.icon}
+                            </Icon>
                         </Card>
                     );
                     })
@@ -106,7 +110,7 @@ function EventsList() {
 
                             <Flex alignItems={'center'} gap={1}>
                                 <Text fontSize='md'>{event.name}</Text>
-                                {event.private ? <LockIcon/> : <UnlockIcon/>}
+                                {event.private ? <LockIcon/> : <KeyIcon/>}
                             </Flex>
                             <Flex 
                                 alignItems={'center'} 
@@ -116,7 +120,7 @@ function EventsList() {
                                     <Text fontSize='md' fontWeight={600}>{event.participants}</Text>
                                     <Text fontSize='sm'>/{event.maxParticipants}</Text>
                                 </Flex>
-                                <UserGroupIcon/>
+                                <GroupIcon/>
                             </Flex>
                         </Flex>
                     );

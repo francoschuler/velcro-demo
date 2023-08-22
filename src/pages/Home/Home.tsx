@@ -1,21 +1,27 @@
-import { Card, Flex, Grid } from '@chakra-ui/react'
-import MapIcon from '../../assets/icons/MapIcon'
-import PlusIcon from '../../assets/icons/PlusIcon'
-import EyeIcon from '../../assets/icons/EyeIcon'
-import BellIcon from '../../assets/icons/BellIcon'
-import UserIcon from '../../assets/icons/UserIcon'
+import { Card, Flex, Grid, Icon } from '@chakra-ui/react'
+import {ReactComponent as EyeIcon} from '../../assets/newIcons/eye.svg'
+import {ReactComponent as BellIcon} from '../../assets/newIcons/bell.svg'
+import {ReactComponent as ProfileIcon} from '../../assets/newIcons/profile.svg'
 import { useNavigate } from "react-router-dom";
 import { ReactElement } from 'react'
+import {ReactComponent as MapIcon} from '../../assets/newIcons/map.svg';
+import { theme } from '../../theme'
+
 
 export default function Home() {
   const navigate = useNavigate();
 
+  const plusIcon = <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+</svg>
+
+
   const routes: {icon: ReactElement, path: string}[] = [
-    {icon: <MapIcon/>, path: '/map'},
-    {icon: <PlusIcon/>, path: ''},
-    {icon: <EyeIcon/>, path: '/events-list'},
-    {icon: <BellIcon/>, path: ''},
-    {icon: <UserIcon/>, path: '/profile'},
+    {icon: <MapIcon color={theme.main}/>, path: '/map'},
+    {icon: plusIcon, path: ''},
+    {icon: <EyeIcon color={theme.main}/>, path: '/events-list'},
+    {icon: <BellIcon color={theme.main}/>, path: '/'},
+    {icon: <ProfileIcon color={theme.main}/>, path: '/profile'},
   ]
 
   return (
@@ -29,7 +35,9 @@ export default function Home() {
                 cursor={'pointer'}
                 onClick={() => navigate(route.path)}
                 >
-                {route.icon}
+                  <Icon boxSize={'3rem'}>
+                    {route.icon}
+                  </Icon>
                 </Card>
             );
         })}

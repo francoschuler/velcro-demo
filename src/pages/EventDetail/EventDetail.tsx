@@ -1,9 +1,9 @@
 import { Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Icon, Image, Text } from "@chakra-ui/react"
 
-import StoreIcon from '../../assets/icons/StoreIcon';
 import { theme } from "../../theme";
-import UserGroupIcon from "../../assets/icons/UserGroupIcon";
-import PinIcon from "../../assets/icons/PinIcon";
+import {ReactComponent as PinIcon} from "../../assets/newIcons/pin.svg";
+import {ReactComponent as GroupIcon} from "../../assets/newIcons/group.svg";
+import {ReactComponent as StoreIcon} from "../../assets/newIcons/store.svg";
 import { useNavigate } from "react-router-dom";
 
 function EventDetail() {
@@ -22,7 +22,9 @@ function EventDetail() {
                 <CardHeader>
                     <Flex>
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
-                            <StoreIcon/>
+                            <Icon boxSize={'2rem'}>
+                                <StoreIcon color={theme.main}/>
+                            </Icon>
 
                             <Box>
                                 <Text fontSize='lg'>Torneo de Pádel</Text>
@@ -34,7 +36,7 @@ function EventDetail() {
                                 <Text fontSize='md' fontWeight={600}>10</Text>
                                 <Text fontSize='sm'>/17</Text>
                             </Flex>
-                            <UserGroupIcon/>
+                            <GroupIcon/>
                         </Flex>
                         
                     </Flex>
@@ -74,7 +76,7 @@ function EventDetail() {
                     </Flex>
                     <Button 
                         width={'fit-content'} 
-                        leftIcon={<PinIcon />} 
+                        leftIcon={<PinIcon color='#fffff'/>} 
                         backgroundColor={theme.main} 
                         color={'white'}
                         onClick={() => navigate('/map')}

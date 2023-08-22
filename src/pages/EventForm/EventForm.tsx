@@ -3,6 +3,8 @@ import React from 'react'
 import { SingleDatepicker } from "chakra-dayzed-datepicker";
 import { theme } from '../../theme';
 import { useNavigate } from 'react-router-dom';
+import {ReactComponent as PinIcon} from "../../assets/newIcons/pin.svg";
+import {ReactComponent as ExternalIcon} from "../../assets/newIcons/external.svg";
 
 export default function EventForm() {
 
@@ -19,17 +21,11 @@ export default function EventForm() {
                     </Icon>
 
     const pinIcon = <Icon boxSize={6}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                        </svg>
+                        <PinIcon />
                     </Icon>
 
     const externalLinkIcon = <Icon boxSize={6}>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                                </svg>
-
+                               <ExternalIcon/>
                             </Icon>
 
 
