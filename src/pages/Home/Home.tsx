@@ -18,9 +18,9 @@ export default function Home() {
 
   const routes: {icon: ReactElement, path: string}[] = [
     {icon: <MapIcon color={theme.main}/>, path: '/map'},
-    {icon: plusIcon, path: ''},
+    {icon: plusIcon, path: '/create-event'},
     {icon: <EyeIcon color={theme.main}/>, path: '/events-list'},
-    {icon: <BellIcon color={theme.main}/>, path: '/'},
+    {icon: <BellIcon color={theme.main}/>, path: '/notifications'},
     {icon: <ProfileIcon color={theme.main}/>, path: '/profile'},
   ]
 

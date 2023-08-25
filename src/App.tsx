@@ -6,6 +6,9 @@ import EventDetail from './pages/EventDetail/EventDetail';
 import { Box } from '@chakra-ui/react';
 import Profile from './pages/Profile/Profile';
 import EventForm from './pages/EventForm/EventForm';
+import Notifications from './pages/Notifications/Notifications';
+import NotificationsList from './pages/Notifications/NotificationsList';
+import NotificationDetails from './pages/Notifications/NotificationDetails';
 
 function App() {
 
@@ -19,6 +22,9 @@ function App() {
         <Route path="/events-list/:eventId" element={<EventDetail />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/create-event" element={<EventForm />} />
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/notifications/notifications-list" element={<NotificationsList />} />
+        <Route path="/notifications/notifications-list/:idNotification" element={<NotificationDetails />} />
       </Routes>
     </Box>
   );
