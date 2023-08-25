@@ -5,6 +5,7 @@ import {ReactComponent as ProfileIcon} from '../../assets/newIcons/profile.svg'
 import { useNavigate } from "react-router-dom";
 import { ReactElement } from 'react'
 import {ReactComponent as MapIcon} from '../../assets/newIcons/map.svg';
+import {ReactComponent as BoxIcon} from '../../assets/newIcons/box.svg';
 import { theme } from '../../theme'
 
 
@@ -18,7 +19,7 @@ export default function Home() {
 
   const routes: {icon: ReactElement, path: string}[] = [
     {icon: <MapIcon color={theme.main}/>, path: '/map'},
-    {icon: plusIcon, path: '/create-event'},
+    {icon: <BoxIcon color={theme.main}/>, path: '/create-event'},
     {icon: <EyeIcon color={theme.main}/>, path: '/events-list'},
     {icon: <BellIcon color={theme.main}/>, path: '/notifications'},
     {icon: <ProfileIcon color={theme.main}/>, path: '/profile'},

@@ -5,7 +5,8 @@ import SVG from "react-inlinesvg";
 import {ReactComponent as HomeIcon} from '../../assets/newIcons/home.svg';
 import {ReactComponent as MapIcon} from '../../assets/newIcons/map.svg';
 import {ReactComponent as EyeIcon} from '../../assets/newIcons/eye.svg'
-import {ReactComponent as ProfileIcon} from '../../assets/newIcons/profile.svg'
+import {ReactComponent as ProfileIcon} from '../../assets/newIcons/profile.svg';
+import {ReactComponent as BoxIcon} from '../../assets/newIcons/box.svg';
 
 export default function Nav() {
     
@@ -62,9 +63,7 @@ export default function Nav() {
                     padding={2}
                     cursor={'pointer'}
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                    </svg>
+                    <BoxIcon color={pathname === '/create-event' ? 'white' : theme.main} />
                 </Icon>
     
                 <Icon 
