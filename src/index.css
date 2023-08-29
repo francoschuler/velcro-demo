@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "ArcadeClassic";   /*Can be any text*/
+    src: local("ArcadeClassic"),
+      url("./assets/fonts/ArcadeClassic.ttf") format("truetype");
+  }
+  
+
 
 html {
     box-sizing: border-box;

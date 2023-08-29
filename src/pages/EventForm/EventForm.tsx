@@ -10,7 +10,6 @@ export default function EventForm() {
 
     const navigate = useNavigate();
 
-    const [categorySelected, setCategorySelected] = React.useState('');
     const [dateInput, setDateInput] = React.useState(new Date());
 
     
@@ -62,6 +61,9 @@ export default function EventForm() {
                 backgroundColor={theme.main} 
                 color={"white"}
                 onClick={() => navigate('/map')}
+                fontFamily={'ArcadeClassic'}
+                letterSpacing={2}
+                fontSize={'15px'}
             > 
                 Seleccionar ubicación
             </Button>
@@ -85,6 +87,9 @@ export default function EventForm() {
                     backgroundColor={'white'} 
                     color={theme.main}
                     border={`2px solid ${theme.main}`}
+                    fontFamily={'ArcadeClassic'}
+                    letterSpacing={2}
+                    fontSize={'20px'}
                 > 
                     Crear evento
                 </Button>

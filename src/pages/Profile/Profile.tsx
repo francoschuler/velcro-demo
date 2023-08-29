@@ -1,6 +1,5 @@
 import { Box, Button, Flex, Icon, Text, Textarea } from '@chakra-ui/react'
 import {ReactComponent as ProfileIcon} from '../../assets/newIcons/profile.svg';
-import styled from '@emotion/styled';
 import { theme } from '../../theme';
 
 
@@ -24,25 +23,36 @@ export default function Profile() {
             <Button
                 variant='outline'
                 w={'100%'}
-
+                fontFamily={'ArcadeClassic'}
+                letterSpacing={2}
+                fontSize={'20px'}
             > 
                 AJUSTES
             </Button>
             <Button
                 variant='outline'
                 w={'100%'}
+                fontFamily={'ArcadeClassic'}
+                letterSpacing={2}
+                fontSize={'20px'}
             > 
                 AMIGOS
             </Button>
             <Button
                 variant='outline'
                 w={'100%'}
+                fontFamily={'ArcadeClassic'}
+                letterSpacing={2}
+                fontSize={'20px'}
             > 
                 HISTORIAL
             </Button>
             <Button
                 variant='outline'
                 w={'100%'}
+                fontFamily={'ArcadeClassic'}
+                letterSpacing={2}
+                fontSize={'20px'}
             > 
                 EDITAR PERFIL
             </Button>

@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate, Route, RouterProvider, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Map from './pages/Map/Map';
 import EventsList from './pages/EventsList/EventsList';
@@ -9,13 +9,16 @@ import EventForm from './pages/EventForm/EventForm';
 import Notifications from './pages/Notifications/Notifications';
 import NotificationsList from './pages/Notifications/NotificationsList';
 import NotificationDetails from './pages/Notifications/NotificationDetails';
+import "./assets/fonts/ArcadeClassic.ttf";
+import Welcome from './pages/Welcome/Welcome';
 
 function App() {
 
   return (
-    <Box maxW={'100%'} minH={'100vh'} padding={'2rem'}>
+    <Box maxW={'100%'} minH={'100vh'} padding={'2rem'} >
       <Routes>
-        <Route path="/" element={<Navigate to={'/home'} />} />
+        <Route path="/" element={<Navigate to={'/welcome'} />} />
+        <Route path="/welcome" element={<Welcome />} />
         <Route path="/home" element={<Home />} />
         <Route path="/map" element={<Map />} />
         <Route path="/events-list" element={<EventsList />} />

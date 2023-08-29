@@ -80,6 +80,9 @@ function EventDetail() {
                         backgroundColor={theme.main} 
                         color={'white'}
                         onClick={() => navigate('/map')}
+                        fontFamily={'ArcadeClassic'}
+                        letterSpacing={2}
+                        fontSize={'15px'}
                     >   
                         Abrir en mapas
                     </Button>
@@ -94,6 +97,10 @@ function EventDetail() {
                     backgroundColor={'white'} 
                     color={theme.main}
                     border={`2px solid ${theme.main}`}
+                    fontFamily={'ArcadeClassic'}
+                    letterSpacing={2}
+                    fontSize={'20px'}
+                    
                 > 
                     Unirse al chat 
                 </Button>

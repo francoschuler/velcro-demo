@@ -1,8 +1,8 @@
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Icon, Image, Text } from '@chakra-ui/react'
+import { Box, Button, Card, CardBody, CardHeader, Flex, Icon, Text } from '@chakra-ui/react'
 import { theme } from '../../theme'
 
 import {ReactComponent as BellIcon} from '../../assets/newIcons/bell.svg';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const notifications = [
@@ -24,19 +24,9 @@ const notifications = [
     
 ]
 
-
-const plusIcon = <Icon boxSize={6}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                    </svg>
-                </Icon>
-
-
 export default function NotificationDetails() {
 
     const [notification, setNotification] = useState<any>(null)
-
-    const navigate = useNavigate();
 
     const { idNotification } = useParams();
 
@@ -48,7 +38,7 @@ export default function NotificationDetails() {
             }))
         }
       
-    }, [])
+    }, [idNotification])
 
     const getNotificationStatus = () => {
         if(notification){
@@ -94,6 +84,9 @@ export default function NotificationDetails() {
             <Button
                 variant='outline'
                 w={'100%'}
+                fontFamily={'ArcadeClassic'}
+                letterSpacing={2}
+                fontSize={'20px'}
             > 
                 ACEPTAR
             </Button>
@@ -101,6 +94,9 @@ export default function NotificationDetails() {
                 <Button
                     variant='outline'
                     w={'100%'}
+                    fontFamily={'ArcadeClassic'}
+                    letterSpacing={2}
+                    fontSize={'20px'}
                 > 
                     RECHAZAR
                 </Button>
@@ -109,6 +105,9 @@ export default function NotificationDetails() {
                 <Button
                     variant='outline'
                     w={'100%'}
+                    fontFamily={'ArcadeClassic'}
+                    letterSpacing={2}
+                    fontSize={'20px'}
                 > 
                     VER PERFIL
                 </Button>
@@ -118,6 +117,9 @@ export default function NotificationDetails() {
                 <Button
                     variant='outline'
                     w={'100%'}
+                    fontFamily={'ArcadeClassic'}
+                    letterSpacing={2}
+                    fontSize={'20px'}
                 > 
                     VER DETALLES
                 </Button>
@@ -127,6 +129,9 @@ export default function NotificationDetails() {
                 <Button
                     variant='outline'
                     w={'100%'}
+                    fontFamily={'ArcadeClassic'}
+                    letterSpacing={2}
+                    fontSize={'20px'}
                 > 
                     BUSCAR PLANES SIMILARES
                 </Button>

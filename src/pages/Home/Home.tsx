@@ -20,14 +20,12 @@ export default function Home() {
   const routes: {icon: ReactElement, path: string}[] = [
     {icon: <MapIcon color={theme.main}/>, path: '/map'},
     {icon: <BoxIcon color={theme.main}/>, path: '/create-event'},
-    {icon: <EyeIcon color={theme.main}/>, path: '/events-list'},
-    {icon: <BellIcon color={theme.main}/>, path: '/notifications'},
-    {icon: <ProfileIcon color={theme.main}/>, path: '/profile'},
+    {icon: <EyeIcon color={theme.main}/>, path: '/events-list'}
   ]
 
   return (
-    <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} mt={'6rem'}>
-      <Grid templateColumns='repeat(2, 1fr)' gap={6}>
+    <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+      <Grid templateColumns='repeat(1, 1fr)' gap={6}>
         {routes.map(route => {
             return (
                 <Card 
