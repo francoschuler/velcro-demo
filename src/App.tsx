@@ -11,6 +11,7 @@ import NotificationsList from './pages/Notifications/NotificationsList';
 import NotificationDetails from './pages/Notifications/NotificationDetails';
 import "./assets/fonts/ArcadeClassic.ttf";
 import Welcome from './pages/Welcome/Welcome';
+import EventExplorer from './pages/EventExplorer/EventExplorer';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/notifications/notifications-list" element={<NotificationsList />} />
         <Route path="/notifications/notifications-list/:idNotification" element={<NotificationDetails />} />
+        <Route path="/event-explorer" element={<EventExplorer />} />
       </Routes>
     </Box>
   );

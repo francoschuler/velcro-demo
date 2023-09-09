@@ -6,11 +6,12 @@ import App from './App';
 import { ChakraProvider } from '@chakra-ui/react'
 import Header from './components/header/Header';
 import Nav from './components/nav/Nav';
-import { BrowserRouter, Router } from 'react-router-dom';
+import { BrowserRouter, Router, useLocation } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
     <ChakraProvider>

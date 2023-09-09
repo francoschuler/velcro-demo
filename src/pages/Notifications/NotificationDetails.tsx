@@ -2,7 +2,7 @@ import { Box, Button, Card, CardBody, CardHeader, Flex, Icon, Text } from '@chak
 import { theme } from '../../theme'
 
 import {ReactComponent as BellIcon} from '../../assets/newIcons/bell.svg';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const notifications = [
@@ -27,6 +27,7 @@ const notifications = [
 export default function NotificationDetails() {
 
     const [notification, setNotification] = useState<any>(null)
+    const navigate = useNavigate();
 
     const { idNotification } = useParams();
 
@@ -108,6 +109,7 @@ export default function NotificationDetails() {
                     fontFamily={'ArcadeClassic'}
                     letterSpacing={2}
                     fontSize={'20px'}
+                    onClick={() => navigate('/profile')}
                 > 
                     VER PERFIL
                 </Button>
