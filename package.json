@@ -17,6 +17,7 @@
     "date-fns": "^2.30.0",
     "dayzed": "^3.2.3",
     "framer-motion": "^10.15.1",
+    "google-map-react": "^2.2.1",
     "npm-force-resolutions": "^0.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -49,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/google-map-react": "^2.1.7"
   }
 }

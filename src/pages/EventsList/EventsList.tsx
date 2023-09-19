@@ -8,7 +8,7 @@ import {ReactComponent as PetIcon} from '../../assets/newIcons/pet.svg';
 import {ReactComponent as PlaneIcon} from '../../assets/newIcons/plane.svg';
 import {ReactComponent as GroupIcon} from '../../assets/newIcons/group.svg';
 import {ReactComponent as LockIcon} from '../../assets/newIcons/lock.svg';
-import {ReactComponent as KeyIcon} from '../../assets/newIcons/key.svg';
+import {ReactComponent as KeyIcon} from '../../assets/newIcons/unlock.svg';
 
 function EventsList() {
 
@@ -110,7 +110,9 @@ function EventsList() {
 
                             <Flex alignItems={'center'} gap={1}>
                                 <Text fontSize='md'>{event.name}</Text>
-                                {event.private ? <LockIcon/> : <KeyIcon/>}
+                                <Icon boxSize={5}>
+                                    {event.private ? <LockIcon/> : <KeyIcon/>}
+                                </Icon>
                             </Flex>
                             <Flex 
                                 alignItems={'center'} 

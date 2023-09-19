@@ -18,11 +18,9 @@ function Header() {
 
   return (
     <HeaderContainer>
-        <Icon boxSize={'15rem'}>
-          <VelcroIcon onClick={() => navigate('/')} cursor={'pointer'}/>
+        <Icon boxSize={'15rem'} onClick={() => navigate('/home')} cursor={'pointer'}>
+          <VelcroIcon />
         </Icon>
-
-      
     </HeaderContainer>
 
   )

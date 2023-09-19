@@ -1,11 +1,10 @@
 import { Flex, Icon } from '@chakra-ui/react';
 import { theme } from '../../theme';
 import { useNavigate } from 'react-router-dom';
-import {ReactComponent as HomeIcon} from '../../assets/newIcons/home.svg';
 import {ReactComponent as MapIcon} from '../../assets/newIcons/map.svg';
 import {ReactComponent as EyeIcon} from '../../assets/newIcons/eye.svg'
 import {ReactComponent as ProfileIcon} from '../../assets/newIcons/profile.svg';
-import {ReactComponent as BoxIcon} from '../../assets/newIcons/box.svg';
+import {ReactComponent as PlusIcon} from '../../assets/newIcons/plus.svg';
 import {ReactComponent as BellIcon} from '../../assets/newIcons/bell.svg';
 
 export default function Nav() {
@@ -69,24 +68,24 @@ export default function Nav() {
                         padding={2}
                         cursor={'pointer'}
                     >
-                        <BoxIcon color={pathname === '/create-event' ? 'white' : theme.main} />
+                        <PlusIcon color={pathname === '/create-event' ? 'white' : theme.main} />
                     </Icon>
                 }
     
                 {pathname !== '/home' &&
                     <Icon 
-                        onClick={() => navigate('/events-list')}
+                        onClick={() => navigate('/event-explorer')}
                         boxSize={'3rem'} 
                         width={'3rem'}
                         height={'3rem'}
-                        color={pathname === '/events-list' ? 'white' : theme.main} 
-                        backgroundColor={pathname === '/events-list' ? theme.main : 'white'}
+                        color={pathname === '/event-explorer' ? 'white' : theme.main} 
+                        backgroundColor={pathname === '/event-explorer' ? theme.main : 'white'}
                         borderRadius={'8px'} 
                         padding={2}
                         cursor={'pointer'}
                     >
                     
-                    <EyeIcon color={pathname === '/events-list' ? 'white' : theme.main} />
+                    <EyeIcon color={pathname === '/event-explorer' ? 'white' : theme.main} />
                     </Icon>
                 }
     

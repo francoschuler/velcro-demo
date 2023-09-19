@@ -1,11 +1,9 @@
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Icon, Image, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Card, CardFooter, CardHeader, Flex, Icon, Text } from '@chakra-ui/react'
 import { theme } from '../../theme'
 
 import {ReactComponent as HeartIcon} from "../../assets/newIcons/heart.svg";
 import {ReactComponent as TrashIcon} from "../../assets/newIcons/trash.svg";
 import {ReactComponent as GroupIcon} from "../../assets/newIcons/group.svg";
-import {ReactComponent as StoreIcon} from "../../assets/newIcons/store.svg";
 
 export default function EventExplorer() {
   return (
@@ -16,7 +14,7 @@ export default function EventExplorer() {
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
 
                             <Box>
-                                <Text fontSize='lg'>Torneo de Pádel</Text>
+                                <Text fontSize='lg'>Tardeo Yoga</Text>
                                 <Text color={theme.textSecondary}> 20:00 - 22:00 Madrid Centro </Text>
                             </Box>
                         </Flex>
@@ -30,6 +28,7 @@ export default function EventExplorer() {
                         
                     </Flex>
                     <Text color={theme.textSecondary} fontStyle={'italic'} mt={2}> Este plan no tiene restricción de edad </Text>
+                    <Text mt={2}> Clase gratuita de Yoga en el Retiro, ningún material es necesario ya que se proporcionará en el punto acordado dentro del parque. ¡Ven a probar sin compromiso! </Text>
                 </CardHeader>
 
                 <CardFooter
