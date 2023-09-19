@@ -75,7 +75,7 @@ export default function EventForm() {
                 <Switch id='email-alerts' />
             </FormControl>
 
-            <Link href='/home'>
+            <Link onClick={() => navigate('../create-event/other-configurations', {replace: true})}>
                 Otras configuraciones {externalLinkIcon}
             </Link>
 
