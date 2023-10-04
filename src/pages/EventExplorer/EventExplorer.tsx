@@ -4,8 +4,28 @@ import { theme } from '../../theme'
 import {ReactComponent as HeartIcon} from "../../assets/newIcons/heart.svg";
 import {ReactComponent as TrashIcon} from "../../assets/newIcons/trash.svg";
 import {ReactComponent as GroupIcon} from "../../assets/newIcons/group.svg";
+import { EventModel, events } from '../../data/Events';
+import { useEffect, useState } from "react";
 
 export default function EventExplorer() {
+
+    const [currentEvent, setCurrentEvent] = useState<EventModel>(events[0]);
+    const [currentIndex, setCurrentIndex] = useState(0)
+
+    const navigateOnEvents = (n: number) => {
+        const index = currentIndex + n;
+        if(index >= events.length) {
+            setCurrentEvent(events[0]);
+            setCurrentIndex(0);
+        } else if (index < 0){
+            setCurrentEvent(events[events.length - 1])
+            setCurrentIndex(events.length - 1);
+        } else {
+            setCurrentEvent(events[index]);
+            setCurrentIndex(index);
+        }
+    }
+
   return (
     <div>
         <Card maxW={'100%'}>
@@ -14,21 +34,27 @@ export default function EventExplorer() {
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
 
                             <Box>
-                                <Text fontSize='lg'>Tardeo Yoga</Text>
+                                <Text fontSize='lg'>{currentEvent.name}</Text>
                                 <Text color={theme.textSecondary}> 20:00 - 22:00 Madrid Centro </Text>
                             </Box>
                         </Flex>
                         <Flex alignItems={'center'} gap={2}>
                             <Flex alignItems={'center'}>
-                                <Text fontSize='md' fontWeight={600}>10</Text>
-                                <Text fontSize='sm'>/17</Text>
+                                <Text fontSize='md' fontWeight={600}>{currentEvent.participants}</Text>
+                                <Text fontSize='sm'>/{currentEvent.maxParticipants}</Text>
                             </Flex>
                             <GroupIcon/>
                         </Flex>
                         
                     </Flex>
-                    <Text color={theme.textSecondary} fontStyle={'italic'} mt={2}> Este plan no tiene restricción de edad </Text>
-                    <Text mt={2}> Clase gratuita de Yoga en el Retiro, ningún material es necesario ya que se proporcionará en el punto acordado dentro del parque. ¡Ven a probar sin compromiso! </Text>
+                    {currentEvent.ageRestriction ?
+                        <Text color={theme.textSecondary} fontStyle={'italic'} mt={2}> +{currentEvent.ageRestriction} años </Text>
+
+                        :
+                        <Text color={theme.textSecondary} fontStyle={'italic'} mt={2}> Este plan no tiene restricción de edad </Text>
+
+                    }                    
+                    <Text mt={2}> {currentEvent.description} </Text>
                 </CardHeader>
 
                 <CardFooter
@@ -65,6 +91,7 @@ export default function EventExplorer() {
                         borderRadius={'8px'} 
                         padding={2}
                         cursor={'pointer'}
+                        onClick={() => navigateOnEvents(-1)}
                     >
                         <TrashIcon color={theme.main}/>
                 </Icon>
@@ -77,6 +104,7 @@ export default function EventExplorer() {
                         borderRadius={'8px'} 
                         padding={2}
                         cursor={'pointer'}
+                        onClick={() => navigateOnEvents(1)}
                     >
                         <HeartIcon color='white'/>
                 </Icon>

@@ -4,17 +4,32 @@ import { theme } from "../../theme";
 import {ReactComponent as PinIcon} from "../../assets/newIcons/pin.svg";
 import {ReactComponent as GroupIcon} from "../../assets/newIcons/group.svg";
 import {ReactComponent as StoreIcon} from "../../assets/newIcons/store.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { EventModel, events } from "../../data/Events";
 
 function EventDetail() {
     
     const navigate = useNavigate();
+    const {eventId} = useParams();
+
+    const [event, setEvent] = useState<EventModel | null>(null)
 
     const plusIcon = <Icon boxSize={6}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                         </svg>
                     </Icon>
+
+    
+
+    useEffect(() => {
+      if(eventId) {
+        const currentEvent = events.find(event => event.id === eventId)
+        setEvent(currentEvent ?? null);
+      }
+    }, [eventId])
+    
    
     return (
         <>
@@ -27,25 +42,31 @@ function EventDetail() {
                             </Icon>
 
                             <Box>
-                                <Text fontSize='lg'>Torneo de Pádel</Text>
+                                <Text fontSize='lg'>{event?.name}</Text>
                                 <Text color={theme.textSecondary}> 20:00 - 22:00 Madrid Centro </Text>
                             </Box>
                         </Flex>
                         <Flex alignItems={'center'} gap={2}>
                             <Flex alignItems={'center'}>
-                                <Text fontSize='md' fontWeight={600}>10</Text>
-                                <Text fontSize='sm'>/17</Text>
+                                <Text fontSize='md' fontWeight={600}>{event?.participants}</Text>
+                                <Text fontSize='sm'>/{event?.maxParticipants}</Text>
                             </Flex>
                             <GroupIcon/>
                         </Flex>
                         
                     </Flex>
-                    <Text color={theme.textSecondary} fontStyle={'italic'} mt={2}> Este plan no tiene restricción de edad </Text>
+                    {event?.ageRestriction ?
+                        <Text color={theme.textSecondary} fontStyle={'italic'} mt={2}> +{event.ageRestriction} años </Text>
+
+                        :
+                        <Text color={theme.textSecondary} fontStyle={'italic'} mt={2}> Este plan no tiene restricción de edad </Text>
+
+                    }
                 </CardHeader>
                 
                 <CardBody>
                     <Text>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptatem nihil est hic veniam animi dolor quam unde quaerat? Ex aut sit, inventore eos voluptatibus nisi dolores voluptates debitis similique.
+                        {event?.description}
                     </Text>
                 </CardBody>
                 <Image

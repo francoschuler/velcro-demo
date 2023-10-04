@@ -9,6 +9,7 @@ import {ReactComponent as PlaneIcon} from '../../assets/newIcons/plane.svg';
 import {ReactComponent as GroupIcon} from '../../assets/newIcons/group.svg';
 import {ReactComponent as LockIcon} from '../../assets/newIcons/lock.svg';
 import {ReactComponent as KeyIcon} from '../../assets/newIcons/unlock.svg';
+import { events } from '../../data/Events';
 
 function EventsList() {
 
@@ -19,58 +20,6 @@ function EventsList() {
         {icon: <DrinkIcon color={theme.main}/>, name: 'Travel'},
         {icon: <PetIcon color={theme.main} />, name: 'Travel2'},
         {icon: <PlaneIcon color={theme.main}/>, name: 'Travel3'},
-    ]
-
-    const events = [
-        {
-            id: '1',
-            name: 'Cenita piso',
-            private: true,
-            maxParticipants: 14,
-            participants: 7,
-        },
-        {
-            id: '2',
-            name: 'Bizcocho casero',
-            private: false,
-            maxParticipants: 14,
-            participants: 7,
-        },
-        {
-            id: '3',
-            name: 'Cenita piso',
-            private: false,
-            maxParticipants: 14,
-            participants: 3,
-        },
-        {
-            id: '4',
-            name: 'Comida Bienvenida',
-            private: true,
-            maxParticipants: 14,
-            participants: 12,
-        },
-        {
-            id: '5',
-            name: 'Oferta Familiar la Mafia',
-            private: true,
-            maxParticipants: 14,
-            participants: 8,
-        },
-        {
-            id: '6',
-            name: 'Comida cerro',
-            private: true,
-            maxParticipants: 14,
-            participants: 5,
-        },
-        {
-            id: '7',
-            name: 'Pasta italiana',
-            private: true,
-            maxParticipants: 14,
-            participants: 2,
-        }
     ]
 
     return (
